@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  delores:
+    container_name: rap2-dolores
+    build: .
+    working_dir: /home/rap2-dolores
+    environment:
+    - NODE_ENV=production
+    command: /bin/sh -c 'http-server ./build -s -p 8081'
+    privileged: true
+    ports:
+    - "80:8081"
